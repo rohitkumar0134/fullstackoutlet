@@ -1,0 +1,8 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+    /* background: #0D0D0F !important; */
+  }
+  p{
+    margin: 0;
+  }

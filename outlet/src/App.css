@@ -1,0 +1,96 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  background-color: #F4EEE0;
+  color: #393646;
+}
+
+/* @media (min-width: 300px) and (max-width:575px) {
+  .btn{
+      margin: 0 2% !important;
+  }
+  .card{
+      padding: 0 4% !important;
+  }
+}
+@media (min-width: 576px) and (max-width:767px) {
+  .btn{
+      margin: 2% 4% !important;
+  }
+  .card{
+      padding: 0 4% !important;
+  }
+}
+@media (min-width: 768px) and (max-width:900px) {
+  .btn{
+      margin: 2% 5% !important;
+  }
+  .card{
+      padding: 0 4% !important;
+  }
+} */
+
+
+@media screen and (max-width:800px) {
+  #movie-info{
+    flex-direction: column;
+  }
+  #form{
+    width: 100% !important;
+  }
+}
+
+
+/* CARD.JSX */
+.card{
+  padding: 0 !important;
+}
+
+.sort-btn{
+  background-color: #393646 !important;
+  color: #F4EEE0 !important;
+}
+
+@media screen and (max-width:575px) {
+  .sort-div{
+    width: 90% !important;
+  }
+}
+@media screen and (max-width:576px) {
+  .card-div{
+    width: 90% !important;
+  }
+}
+
+/* SHOW INFO JSX */
+
+@media screen and (min-width:992px) {
+  .showinfo-div{
+    /* background-color: palegreen; */
+    display: flex !important;
+    gap: 2em;
+  }
+}
+
+.showinfo-div > img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.showinfo-div > button{
+  color: #393646;
+}
+
+#selected{
+  background-color: #F4EEE0 !important;
+  color: #393646 !important;
+  border: 2px solid #393646;
+}
