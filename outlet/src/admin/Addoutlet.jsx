@@ -108,6 +108,7 @@ function Addoutlet() {
         
       };
 
+
   return (
 <>
 <h1 className='text-center mt-4'>Add New outlet </h1>
@@ -119,49 +120,49 @@ function Addoutlet() {
       </div>
 
       <div className="mb-3">
-        <label htmlFor="category" className="form-label">category:</label>
+        <label htmlFor="category" className="form-label">Category:</label>
         <input type="text" id="category" className="form-control" value={category} onChange={handleCategoryChange} />
       </div>
 
 
       <div className="mb-3">
-        <label htmlFor="location" className="form-label">location co-ordinates:</label>
+        <label htmlFor="location" className="form-label">Location Co-ordinates:</label>
         <input type="text" id="location" className="form-control" value={location} onChange={handleLocationChange} />
       </div>
 
       <div className="mb-3">
-        <label htmlFor="address" className="form-label">address</label>
+        <label htmlFor="address" className="form-label">Address</label>
         <input type="text" id="address" className="form-control" value={address} onChange={handleaddressChange} />
       </div>
 
 
       <div className="mb-3">
         <label htmlFor="description" className="form-label">Description:</label>
-        <textarea id="description" className="form-control" value={description} onChange={handleDescriptionChange}></textarea>
+        <div className="form-control" contentEditable  value={description} onChange={handleDescriptionChange}></div>
       </div>
 
       <div className="mb-3">
-        <label htmlFor="open timing" className="form-label">open Timing:</label>
-        <input type="time" id="open timing" className="form-control" value={opentiming} onChange={handleopenTimingChange} />
+        <label htmlFor="openTiming" className="form-label">Open Timing:</label>
+        <input type="time" id="openTiming" className="form-control" value={opentiming} onChange={handleopenTimingChange} />
       </div>
 
       <div className="mb-3">
-        <label htmlFor="close timing" className="form-label">close Timing:</label>
+        <label htmlFor="close timing" className="form-label">Close Timing:</label>
         <input type="time" id="close timing" className="form-control" value={closetiming} onChange={handlecloseTimingChange} />
       </div>
 
       <div className="mb-3">
         <label htmlFor="youtubeLink" className="form-label">YouTube Link:</label>
-        <input type="text" id="youtubeLink" className="form-control" value={youtubeLink} onChange={handleYoutubeLinkChange} />
+        <input type="url" placeholder="https://example.com" pattern="https://.*" id="youtubeLink" className="form-control" value={youtubeLink} onChange={handleYoutubeLinkChange} />
       </div>
 
       <div className="mb-3">
-          <label htmlFor="fileInput" className="form-label">Banner images</label>
+          <label htmlFor="fileInput" className="form-label">Banner Images</label>
           <input type="file" className="form-control text-danger" id="fileInput" onChange={handleFileChange} />
         </div>
 
       <div className='text-center'>
-      <button type="submit" className="btn">Upload</button>
+      <button type="submit" className="btn fw-bold" style={{backgroundColor: '#393646', color:'white'}}>Upload</button>
       </div>
     </form>
     
