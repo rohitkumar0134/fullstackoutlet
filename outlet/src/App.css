@@ -12,32 +12,6 @@ body{
   color: #393646;
 }
 
-/* @media (min-width: 300px) and (max-width:575px) {
-  .btn{
-      margin: 0 2% !important;
-  }
-  .card{
-      padding: 0 4% !important;
-  }
-}
-@media (min-width: 576px) and (max-width:767px) {
-  .btn{
-      margin: 2% 4% !important;
-  }
-  .card{
-      padding: 0 4% !important;
-  }
-}
-@media (min-width: 768px) and (max-width:900px) {
-  .btn{
-      margin: 2% 5% !important;
-  }
-  .card{
-      padding: 0 4% !important;
-  }
-} */
-
-
 @media screen and (max-width:800px) {
   #movie-info{
     flex-direction: column;
@@ -46,7 +20,6 @@ body{
     width: 100% !important;
   }
 }
-
 
 /* CARD.JSX */
 .card{
@@ -73,9 +46,17 @@ body{
 
 @media screen and (min-width:992px) {
   .showinfo-div{
-    /* background-color: palegreen; */
     display: flex !important;
-    gap: 2em;
+    gap: 4em;
+  }
+
+  .showinfo-div{
+    overflow: auto;
+  }
+
+  .showinfo-div > div{
+    width: 100%;
+
   }
 }
 
@@ -83,14 +64,65 @@ body{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 65vw;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  overflow: hideden;
+}
+
+@media only screen and (max-width: 650px) {
+  .showinfo-div > img{
+    width: 75vw;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .showinfo-div > img{
+    width: 85vw;
+  }
 }
 
 .showinfo-div > button{
   color: #393646;
 }
 
+@media only screen and (max-width: 472px) {
+  .mini-img {
+    justify-content: center;
+  }
+}
+
 #selected{
   background-color: #F4EEE0 !important;
   color: #393646 !important;
   border: 2px solid #393646;
+}
+
+/* LOGIN */
+.log-btn:hover{
+  transform: scale(1.1) ;
+}
+
+.showpassdiv{
+  position: relative;
+    left: 89%; 
+    bottom:43px;
+}
+
+.showpass{
+  position: absolute;
+  color: #141d2a;
+}
+
+@media only screen and (max-width: 240px) {
+  .showpassdiv {
+    left: 85%;
+  }
+}
+
+/* MODAL */
+
+.modal-dialog{
+  background-color: rgba(0, 0, 0, 0);
 }

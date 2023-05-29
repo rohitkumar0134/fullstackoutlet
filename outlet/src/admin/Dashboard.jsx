@@ -42,7 +42,7 @@ function Dashboard() {
     <>
    <div className="container-fluid">
         <div className="row">
-          <h1 className="col-12 text-center my-3 fw-bold">admin dash board Outlet</h1>
+          <h1 className="col-12 text-center my-3 fw-bold">Admin Dash Board Outlet</h1>
           <div className="col-12 text-end">
         <button className="btn btn-primary" onClick={() => handleAddMore()} >Add More</button>
       </div>
