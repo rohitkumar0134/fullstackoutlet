@@ -5,6 +5,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { VideoPlayerModal } from '../VideoPlayerModal';
 import axios from 'axios';
 
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
 
 export default function ShowInfo() {
   const [modalShow, setModalShow] = useState(false);
@@ -13,6 +16,14 @@ export default function ShowInfo() {
   const [Data, setData] = useState([]);
   const [imageData, setImageData] = useState([]);
 
+  const [open, setOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+
+  const openLightbox = (index) => {
+    setLightboxIndex(index);
+    setOpen(true);
+  };
 
   
   const fetchAllData = async () => {
@@ -75,21 +86,31 @@ export default function ShowInfo() {
             <h2>Image</h2>
 
             <div className="d-flex flex-wrap gap-5 mt-4 mini-img">
-              {imageData.map((imageUrl, index) => (
-                <div key={index} >
-                  <LazyLoadImage
-                    width={200}
-                    height={200}
-                    style={{
-                      objectFit: "cover",
-                      borderRadius: "5px",
-                    }}
-                    src={`../../bannerimages/${imageUrl.images}`}
-                    alt="user"
-                  />
-                </div>
-              ))}
-            </div>
+  {imageData.map((imageUrl, index) => (
+    <div key={index} onClick={() => openLightbox(index)}>
+      <LazyLoadImage
+        width={200}
+        height={200}
+        style={{
+          objectFit: "cover",
+          borderRadius: "5px",
+        }}
+        src={`../../bannerimages/${imageUrl.images}`}
+        alt="user"
+      />
+    </div>
+  ))}
+</div>
+
+{open && (
+<Lightbox
+      open={open}
+      close={() => setOpen(false)}
+      slides={[{ src: `../../bannerimages/${imageData[lightboxIndex].images}` }]}
+    />
+
+    )}
+
           </div>
 
         </div>

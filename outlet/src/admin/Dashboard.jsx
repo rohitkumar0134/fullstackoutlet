@@ -3,6 +3,7 @@ import React, { useState,useEffect } from "react";
 import axios from "axios";
 import Buttons from '../components/Buttons'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { checkToken } from '../hooks/checkToken';
 
 function Dashboard() {
   const [item, setItem] = useState([]);
@@ -36,6 +37,7 @@ function Dashboard() {
   
   useEffect(() => {
     fetchAllData();
+    checkToken();
   }, []);
 
   return (

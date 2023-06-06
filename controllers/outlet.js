@@ -43,13 +43,13 @@ function Outletupload(req, res) {
     }
 
     console.log(req.body);
-    if (!req.file || !req.body.title || !req.body.address || !req.body.opentiming|| !req.body.closetiming || !req.body.location || !req.body.description || !req.body.youtubeLink) {
+    if (!req.file || !req.body.title || !req.body.address || !req.body.description || !req.body.opentiming|| !req.body.closetiming || !req.body.location  || !req.body.youtubeLink) {
       return res.status(400).send({ message: 'All parameters are required.' });
     }
 
     
     // Extract the data from the request
- const { title, location, description, youtubeLink,category,address,opentiming,closetiming } = req.body;
+ const { title, location, youtubeLink,category,address,opentiming,closetiming,description } = req.body;
  const bannerimage = req.file.filename
 
     // Create a message to be sent back to the client
@@ -64,8 +64,8 @@ function Outletupload(req, res) {
     
 // Insert the data into the database
       pool.query(
-        'INSERT INTO outlets (title, bannerimage, location, description, youtubeLink,category,address,opentiming,closetiming) VALUES (?, ?, ?, ?, ?,?,?,?,?)',
-        [title, bannerimage, location, description, youtubeLink,category,address,opentiming,closetiming],
+        'INSERT INTO outlets (title, bannerimage, location, youtubeLink,category,address,opentiming,closetiming,description) VALUES (?, ?, ?, ?,?,?,?,?,?)',
+        [title, bannerimage, location, youtubeLink,category,address,opentiming,closetiming,description],
         (err, results) => {
           if (err) {
             console.error(err);
@@ -94,7 +94,7 @@ function Outletupdate(req, res) {
     }
 
     console.log(req.body);
-    if ( !req.body.title || !req.body.address || !req.body.opentiming|| !req.body.closetiming || !req.body.location || !req.body.description || !req.body.youtubeLink) {
+    if ( !req.body.title || !req.body.address || !req.body.opentiming|| !req.body.closetiming || !req.body.location  || !req.body.youtubeLink) {
       return res.status(400).send({ message: 'All parameters are required.' });
     }
 

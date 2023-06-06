@@ -37,6 +37,7 @@ function Addoutlet() {
       };
 
       const handleDescriptionChange = (event) => {
+        console.log(event.target.value)
         setDescription(event.target.value);
       };
 
@@ -58,12 +59,12 @@ function Addoutlet() {
   
       const formData = new FormData();
       formData.append('title', title);
+      formData.append('description',description);
       formData.append('location', location);
       formData.append('address', address);
       formData.append('opentiming', opentiming);
       formData.append('closetiming', closetiming);
       formData.append('category', category);
-      formData.append('description', description);
       formData.append('youtubeLink', youtubeLink);
 
       const token = localStorage.getItem('token');
@@ -138,7 +139,7 @@ function Addoutlet() {
 
       <div className="mb-3">
         <label htmlFor="description" className="form-label">Description:</label>
-        <div className="form-control" contentEditable  value={description} onChange={handleDescriptionChange}></div>
+        <textarea id="description" className="form-control" value={description} onChange={handleDescriptionChange}></textarea>
       </div>
 
       <div className="mb-3">
